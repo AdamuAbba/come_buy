@@ -11,7 +11,11 @@ export const feedSlice = createSlice({
   initialState,
   reducers: {
     addToLikedFeed: (state, {payload}: PayloadAction<Product>) => {
-      const itemSearch = state.likedFeed.find(item => item)?.id;
+      const objectInArray = state.likedFeed.filter((item, _) => {
+        return item.id === payload.id;
+      });
+      const itemSearch = objectInArray.find(item => item.id === payload.id)?.id;
+
       if (itemSearch === payload.id) {
         state.likedFeed = state.likedFeed.filter(
           item => item.id !== payload.id,

@@ -1,5 +1,8 @@
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {
+  CardStyleInterpolators,
+  createStackNavigator,
+} from '@react-navigation/stack';
 import CustomHeader from 'components/CustomHeader';
 import React from 'react';
 import FeedTabs from 'routes/FeedTabs';
@@ -16,6 +19,7 @@ const RootStack = () => {
       <Navigator
         screenOptions={{
           header: props => <CustomHeader {...props} />,
+          cardStyleInterpolator: CardStyleInterpolators.forBottomSheetAndroid,
         }}>
         <Screen name="feed-tabs" component={FeedTabs} />
         <Screen name="single-product-screen" component={SingleProductScreen} />

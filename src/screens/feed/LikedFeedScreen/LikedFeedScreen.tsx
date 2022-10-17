@@ -44,6 +44,7 @@ const LikedFeedScreen = ({
   return (
     <View style={{...styles.container, backgroundColor: colors.primary}}>
       <FlatList
+        showsVerticalScrollIndicator={false}
         data={likedFeed}
         keyExtractor={(item, _) => item.id.toString()}
         renderItem={({item}) => (

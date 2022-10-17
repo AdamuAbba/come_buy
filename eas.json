@@ -6,12 +6,15 @@
       "node": "16.16.0",
       "channel": "development",
       "env": {
-        "API_URL": "https://fakestoreapi.com"
+        "APP_ENV": "production"
       }
     },
     "preview": {
       "distribution": "internal",
-      "channel": "preview"
+      "channel": "staging",
+      "env": {
+        "APP_ENV": "production"
+      }
     },
     "production": {
       "node": "16.16.0",
@@ -19,7 +22,9 @@
       "android": {
         "buildType": "apk"
       },
-      "extends": "development"
+      "env": {
+        "APP_ENV": "production"
+      }
     }
   }
 }

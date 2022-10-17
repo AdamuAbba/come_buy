@@ -1,30 +1,32 @@
-# FP News v1
+# Come Buy v1
 
-A basic news app implemented with React native (Typescript) 🥲 pardon my design skills.
+A basic social e-commerce app implemented with React native (Typescript) forgive 🥲 my design skills.
 
 # Table of contents
 
-1.  Installation
-2.  Project structure
-3.  Usage/user story
-4.  Author
-5.  Features
-6.  Tech stack
-7.  Appendix
+1. Installation
+2. Project structure
+3. Usage/user story
+4. Author
+5. Features
+6. Tech stack
+7. Appendix
 
 ## Installation
 
 - clone repo
+
   ```
-      git clone https://github.com/AdamuAbba/lendsqr-fp-news.git
+      git clone https://github.com/AdamuAbba/come_buy.git
   ```
+
 - install dependencies
 
   ```
       yarn
   ```
 
-- run android build `locally`
+- run android build `locally or check package.json scripts command chords`
 
   ```
       npx expo run:android
@@ -32,17 +34,18 @@ A basic news app implemented with React native (Typescript) 🥲 pardon my desig
 
 ## Project structure
 
-- Authentication Check Route
-- Authentication Route
-- Main Route
+- Feed Screens
+  - Main feed screen
+  - Liked feed screen
+- Single product screen
 
-<img src="demo/splash_screen.jpg"  width="130" height="270"> <img src="demo/sign_up_1.jpg"  width="130" height="270"> <img src="demo/sign_up_2.jpg"  width="130" height="270"> <img src="demo/login.jpg"  width="130" height="270"> <img src="demo/load_screen.jpg"  width="130" height="270"> <img src="demo/news_listing_screen.jpg"  width="130" height="270"> <img src="demo/news_details_screen.jpg"  width="130" height="270"> <img src="demo/sign_out.jpg"  width="130" height="270">
+<img src="demo/splash_screen.jpg"  width="130" height="270"> <img src="demo/main_feed_screen.jpg"  width="130" height="270"> <img src="demo/liked_feed_screen.jpg"  width="130" height="270"> <img src="demo/product_details_screen.jpg"  width="130" height="270">
 
 ## User story
 
-- A user registers and signs in with [firebase Authentication](https://firebase.google.com/),
-- Access to the `News Listing Screen` and `News Details Screen` are granted
-- A user signs out with the sign out button on the top right corner of the screen
+- A user can scroll through posts and like them by `double tapping`,
+- View all liked posts
+- And can also view each post on it's own screen by `tapping once` on the post
 
 ## Author
 
@@ -68,17 +71,13 @@ A basic news app implemented with React native (Typescript) 🥲 pardon my desig
 
 ## Features
 
-- Basic design
-- Form state handling with [formik](https://formik.org)
+- Simplistic design
+- Consistent design/theming with [NativePaper]("https://reactnativepaper.com")
+- Local state management with [Redux](https://redux-toolkit.js.org/)
 - Basic form validation with [yup validation](https://github.com/jquense/yup)
-- [firebase Authentication](https://firebase.google.com/)
-- [firebase Firestore to store user credentials](https://firebase.google.com/)
-- [firebase Crashlytics](https://firebase.google.com/)
-- [firebase Analytics and navigation logging](https://firebase.google.com/)
-- [firebase in app cloud messaging](https://firebase.google.com/)
-- [RapidApi](https://rapidapi.com/newscatcher-api-newscatcher-api-default/api/newscatcher) as service/api layer
+- [fake store api](https://fakestoreapi.com/) as service/api layer
 - Redux state management for storing local data
-- A button that breaks the app `Runtime Error`
+- Api access layer/data caching using [RTK Query](https://redux-toolkit.js.org/tutorials/rtk-query)
 
 ## Tech Stack
 
@@ -89,15 +88,14 @@ A basic news app implemented with React native (Typescript) 🥲 pardon my desig
 ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
 
-**Server:** ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
-
-[RapidApi](https://rapidapi.com/newscatcher-api-newscatcher-api-default/api/newscatcher)
+**Server:** [Fake store api](https://fakestoreapi.com/)
 
 ## Appendix
 
 **Implementation summary:**
 
-- RTKQuery for accessing api layer with data caching
+- Expo update has been implemented and all requirements/environment variables configured.
+- ❗️the [Fake store api](https://fakestoreapi.com/) endpoint [/products?limit=100]("https://fakestoreapi.com/products?limit=100") returns only a maximum of `20` items as against the expected `100`
 - Each component is modularized
 
 ```
@@ -108,7 +106,3 @@ Component "folder level"
 │   index.tsx
 
 ```
-
-- firebase in app messaging has been implemented successfully but not React native push notification due to project timeline
-
-- all firebase implementations can be monitored from the Google developer console.

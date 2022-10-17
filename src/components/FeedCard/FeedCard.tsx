@@ -1,16 +1,12 @@
-import {IFeedCard} from './types';
+import {addToLikedFeed, selectLikedFeed} from 'features/feed';
 import React, {memo, useCallback, useRef} from 'react';
 import {Image, View} from 'react-native';
+import {TapGestureHandler} from 'react-native-gesture-handler';
 import {Avatar, Colors, IconButton, Surface, Text} from 'react-native-paper';
-import {styles} from './FeedCard.styles';
-import {
-  GestureDetector,
-  Gesture,
-  TapGestureHandler,
-} from 'react-native-gesture-handler';
-import {useAppDispatch, useAppSelector} from 'utils/hooks';
-import {addToLikedFeed, selectLikedFeed} from 'features/feed';
 import Animated from 'react-native-reanimated';
+import {useAppDispatch, useAppSelector} from 'utils/hooks';
+import {styles} from './FeedCard.styles';
+import {IFeedCard} from './types';
 
 const FeedCard = ({item, navigation}: IFeedCard) => {
   const {id, image, price, title} = item;

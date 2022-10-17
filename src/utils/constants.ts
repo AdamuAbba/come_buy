@@ -1,5 +1,8 @@
 import {Dimensions, StatusBar} from 'react-native';
 import {MessageOptions} from 'react-native-flash-message';
+import Constants from 'expo-constants';
+
+const BASE_URL = Constants.expoConfig?.extra?.API_URL;
 
 const SCREEN_HEIGHT: number = Dimensions.get('window').height;
 const SCREEN_WIDTH: number = Dimensions.get('window').width;
@@ -30,4 +33,5 @@ export {
   successConfig,
   errorConfig,
   NINETY_PERCENT_WIDTH,
+  BASE_URL,
 };

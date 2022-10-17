@@ -7,6 +7,7 @@ const StatusComp = (): JSX.Element => {
   return (
     <View>
       <FlatList
+        showsHorizontalScrollIndicator={false}
         horizontal={true}
         data={users}
         keyExtractor={(item, _) => item.id.toString()}
