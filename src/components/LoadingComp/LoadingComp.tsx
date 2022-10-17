@@ -1,9 +1,17 @@
-import { Text, View } from 'react-native';
+import LottieView from 'lottie-react-native';
+import React from 'react';
+import {View} from 'react-native';
+import {styles} from './LoadingComp.style';
 
 const LoadingComp = () => {
   return (
-    <View>
-      <Text>LoadingComp</Text>
+    <View style={styles.container} testID="main-view">
+      <LottieView
+        autoPlay={true}
+        loop={true}
+        style={styles.lottie}
+        source={require('assets/images/loader.json')}
+      />
     </View>
   );
 };

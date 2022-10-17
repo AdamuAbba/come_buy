@@ -1,1 +1,1 @@
-export { default } from './LoadingComp';
+export {default} from './LoadingComp';

@@ -3,21 +3,18 @@ import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import store from 'features/store';
 import React, {useEffect, useState} from 'react';
-import {LogBox} from 'react-native';
 import FlashMessage from 'react-native-flash-message';
 import 'react-native-gesture-handler';
 import {Provider as PaperProvider} from 'react-native-paper';
 import {Provider as StoreProvider} from 'react-redux';
-import AuthCheckStack from 'routes/AuthCheckStack';
+import RootStack from 'routes/RootStack';
 
 const App = (): JSX.Element | null => {
   const [appIsReady, setAppIsReady] = useState(false);
 
   const fontConfig = {
-    TerminusTTF: require('./src/assets/fonts/TerminusTTF_4.49.2.ttf'),
-    'TerminusTTF-bold-italic': require('./src/assets/fonts/TerminusTTF_Bold_Italic_4.49.2.ttf'),
-    'TerminusTTF-bold': require('./src/assets/fonts/TerminusTTF_Bold_4.49.2.ttf'),
-    'TerminusTTF-italic': require('./src/assets/fonts/TerminusTTF_Italic_4.49.2.ttf'),
+    'FuzzyBubbles-Regular': require('./src/assets/fonts/FuzzyBubbles_Regular.ttf'),
+    'FuzzyBubbles-Bold': require('./src/assets/fonts/FuzzyBubbles_Bold.ttf'),
   };
 
   const prepareApp = async () => {
@@ -33,7 +30,6 @@ const App = (): JSX.Element | null => {
   };
 
   useEffect(() => {
-    LogBox.ignoreLogs(['Setting a timer for a long period of time']);
     prepareApp();
   }, []);
 
@@ -43,7 +39,7 @@ const App = (): JSX.Element | null => {
     return (
       <StoreProvider store={store}>
         <PaperProvider theme={theme}>
-          <AuthCheckStack />
+          <RootStack />
         </PaperProvider>
         <FlashMessage position="top" />
       </StoreProvider>

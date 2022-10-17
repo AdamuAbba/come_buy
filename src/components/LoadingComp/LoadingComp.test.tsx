@@ -1,12 +1,10 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import {render} from '@testing-library/react-native';
 import LoadingComp from './LoadingComp';
 
-// jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
-
-describe('<LoadingComp />', () => {
-  test('renders correctly', () => {
-    const tree = renderer.create(<LoadingComp />).toJSON();
-    expect(tree).toMatchSnapshot();
+describe('<LoadingComp/>', () => {
+  test('test if component renders', () => {
+    const {getByTestId} = render(<LoadingComp />);
+    const mainView = getByTestId('main-view');
+    expect(mainView).toBeTruthy();
   });
 });

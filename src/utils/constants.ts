@@ -1,21 +1,9 @@
-import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {Dimensions, StatusBar} from 'react-native';
 import {MessageOptions} from 'react-native-flash-message';
-import moment from 'moment';
-import firestore from '@react-native-firebase/firestore';
-
-const UsersCollection = firestore().collection('Users');
-
-const FPTime = (Date: Date | string): string => moment(Date).calendar();
-
-const googleSignInConfig = GoogleSignin;
-googleSignInConfig.configure({
-  webClientId:
-    '442960332510-e81nk87s7lffi1aqqbhmkrdvredasn5l.apps.googleusercontent.com',
-});
 
 const SCREEN_HEIGHT: number = Dimensions.get('window').height;
 const SCREEN_WIDTH: number = Dimensions.get('window').width;
+const NINETY_PERCENT_WIDTH = 0.9 * SCREEN_WIDTH;
 
 const successConfig: MessageOptions = {
   type: 'success',
@@ -41,7 +29,5 @@ export {
   SCREEN_WIDTH,
   successConfig,
   errorConfig,
-  googleSignInConfig,
-  FPTime,
-  UsersCollection,
+  NINETY_PERCENT_WIDTH,
 };

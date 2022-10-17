@@ -1,64 +1,49 @@
-import {StyleSheet} from 'react-native';
-
-const fontStyles = StyleSheet.create({
-  header: {
-    fontFamily: 'TerminusTTF-bold',
-    fontSize: 30,
-  },
-  body: {
-    fontFamily: 'TerminusTTF',
-  },
-  caption: {
-    fontFamily: 'TerminusTTF-italic',
-  },
-  boldCaption: {
-    fontFamily: 'TerminusTTF-bold-italic',
-  },
-});
-
 const fontConfig = {
   web: {
     regular: {
-      fontFamily: 'TerminusTTF',
+      fontFamily: 'FuzzyBubbles-Regular',
     },
     medium: {
-      fontFamily: 'TerminusTTF-bold',
+      fontFamily: 'FuzzyBubbles-Bold',
+      fontWeight: 'bold',
     },
     light: {
-      fontFamily: 'TerminusTTF',
+      fontFamily: 'FuzzyBubbles-Regular',
     },
     thin: {
-      fontFamily: 'TerminusTTF',
+      fontFamily: 'FuzzyBubbles-Regular',
     },
   },
   ios: {
     regular: {
-      fontFamily: 'TerminusTTF',
+      fontFamily: 'FuzzyBubbles-Regular',
     },
     medium: {
-      fontFamily: 'TerminusTTF-bold',
+      fontFamily: 'FuzzyBubbles-Bold',
+      fontWeight: 'bold',
     },
     light: {
-      fontFamily: 'TerminusTTF',
+      fontFamily: 'FuzzyBubbles-Regular',
     },
     thin: {
-      fontFamily: 'TerminusTTF',
+      fontFamily: 'FuzzyBubbles-Regular',
     },
   },
   android: {
     regular: {
-      fontFamily: 'TerminusTTF',
+      fontFamily: 'FuzzyBubbles-Regular',
     },
     medium: {
-      fontFamily: 'TerminusTTF-bold',
+      fontFamily: 'FuzzyBubbles-Bold',
+      fontWeight: 'bold',
     },
     light: {
-      fontFamily: 'TerminusTTF',
+      fontFamily: 'FuzzyBubbles-Regular',
     },
     thin: {
-      fontFamily: 'TerminusTTF',
+      fontFamily: 'FuzzyBubbles-Regular',
     },
   },
 };
 
-export {fontStyles, fontConfig};
+export {fontConfig};
