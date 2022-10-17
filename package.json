@@ -21,8 +21,8 @@
     "test:ci": "yarn test --coverage",
     "test:badges": "yarn test:ci  && jest-coverage-badges --input coverage/coverage-summary.json --output __badges__",
     "lint": "npx eslint --max-warnings=0 --ext .tsx,.ts,.js,.jsx src/ --fix",
-    "eas:update:dev": "APP_ENV=development eas update",
-    "eas:update:prod": "APP_ENV=production eas update"
+    "eas:update:android:dev": "APP_ENV=development eas update --auto -p android",
+    "eas:update:android:prod": "APP_ENV=production eas update --auto -p android"
   },
   "dependencies": {
     "@react-native-masked-view/masked-view": "0.2.7",
