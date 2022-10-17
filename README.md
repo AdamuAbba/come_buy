@@ -97,6 +97,8 @@ A basic social e-commerce app implemented with React native (Typescript) forgive
 - Expo update has been implemented and all requirements/environment variables configured.
 - ❗️the [Fake store api](https://fakestoreapi.com/) endpoint [/products?limit=100]("https://fakestoreapi.com/products?limit=100") returns only a maximum of `20` items as against the expected `100`
 - Each component is modularized
+- A custom Github workflow triggers eas-updates for the `production channel` and `production branch` on expo.binary production builds are also triggered from the same `main` branch as well
+- wrote little to no tests at all, due to the assessment deadline.
 
 ```
 Component "folder level"
