@@ -24,8 +24,8 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
       - name: Install dependencies
-        run: npm ci
+        run: yarn --frozen-lockfile
       - name: expo updates for production
-        run: npm run eas:update:android:prod
+        run: yarn eas:update:android:prod
       - name: Build on EAS
-        run: npm run build:android:prod
+        run: yarn build:android:prod
