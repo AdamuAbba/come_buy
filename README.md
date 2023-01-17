@@ -1,6 +1,7 @@
 # Come Buy v1
 
-A basic geo-fenced e-commerce app implemented with React native (Typescript)
+
+A basic geo-fenced e-commerce app implemented with React native (Typescript) please find attached in the release section a working installable binary build thank you. the build job was a success on expo servers regardless of the workflow error message displayed here thank you.
 
 # Table of contents
 
