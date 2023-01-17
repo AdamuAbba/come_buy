@@ -1,11 +1,18 @@
-import {Product} from 'features/feed/types';
-import {IFeedTabsScreenProps} from 'routes/FeedTabs/types';
-
+interface Rating {
+  rate: number;
+  count: number;
+}
+interface Item {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: Rating;
+}
 interface IFeedCard {
-  item: Product;
-  navigation: IFeedTabsScreenProps<
-    'liked-feed-screen' | 'main-feed-screen'
-  >['navigation'];
+  item: Item;
 }
 
 export type {IFeedCard};

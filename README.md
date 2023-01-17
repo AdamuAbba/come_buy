@@ -1,6 +1,6 @@
 # Come Buy v1
 
-A basic social e-commerce app implemented with React native (Typescript) forgive 🥲 my design skills.
+A basic geo-fenced e-commerce app implemented with React native (Typescript)
 
 # Table of contents
 
@@ -34,18 +34,19 @@ A basic social e-commerce app implemented with React native (Typescript) forgive
 
 ## Project structure
 
-- Feed Screens
-  - Main feed screen
-  - Liked feed screen
-- Single product screen
+- screens
+  - auth
+    - sign in screen
+    - sign up screen
+  - main
+    - Dashboard screen
 
-<img src="demo/splash_screen.jpg"  width="130" height="270"> <img src="demo/main_feed_screen.jpg"  width="130" height="270"> <img src="demo/liked_feed_screen.jpg"  width="130" height="270"> <img src="demo/product_details_screen.jpg"  width="130" height="270">
+<img src="demo/splash_screen.jpg"  width="130" height="270"> <img src="demo/sign_up_screen.jpg"  width="130" height="270"> <img src="demo/sign_in_screen.jpg"  width="130" height="270"> <img src="demo/dashboard_screen.jpg"  width="130" height="270"> <img src="demo/dashboard_error_screen.jpg"  width="130" height="270">
 
 ## User story
 
-- A user can scroll through posts and like them by `double tapping`,
-- View all liked posts
-- And can also view each post on it's own screen by `tapping once` on the post
+- A user can go through the simulated offline authentication flow with basic form validations
+- A user can scroll through products and try to place an order on any of available items by `tapping on the PLACE ORDER` button,
 
 ## Author
 
@@ -62,10 +63,10 @@ A basic social e-commerce app implemented with React native (Typescript) forgive
 <a href="https://twitter.com/shytypes1028">
 <img alt="twitter" src="https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="twitter" />
 </a>
-<a href="https://abbaportfolio.netlify.app/"  target="_blank">
+<a href="https://www.linkedin.com/in/abba-adamu"  target="_blank">
 <img alt="portfolio" src="https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white" />
 </a>
-<a href="https://www.linkedin.com/in/abba-adamu-365a9b17a/">
+<a href="https://www.linkedin.com/in/abba-adamu">
 <img alt="linkedIn" src="https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
 </a>
 
@@ -75,9 +76,9 @@ A basic social e-commerce app implemented with React native (Typescript) forgive
 - Consistent design/theming with [NativePaper]("https://reactnativepaper.com")
 - Local state management with [Redux](https://redux-toolkit.js.org/)
 - Basic form validation with [yup validation](https://github.com/jquense/yup)
+- Internal form state management with [formik](https://formik.org/)
 - [fake store api](https://fakestoreapi.com/) as service/api layer
-- Redux state management for storing local data
-- Api access layer/data caching using [RTK Query](https://redux-toolkit.js.org/tutorials/rtk-query)
+- Api access layer/data caching using [RTK Query](https://redux-toolkit.js.org/tutorials/rtk-query) which was later swapped out for a basic JSON offline data in accordance to the requirement
 
 ## Tech Stack
 
@@ -88,21 +89,20 @@ A basic social e-commerce app implemented with React native (Typescript) forgive
 ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
 
-**Server:** [Fake store api](https://fakestoreapi.com/)
+**Server:** JSON Data
 
 ## Appendix
 
 **Implementation summary:**
 
-- Expo update has been implemented and all requirements/environment variables configured.
-- ❗️the [Fake store api](https://fakestoreapi.com/) endpoint [/products?limit=100]("https://fakestoreapi.com/products?limit=100") returns only a maximum of `20` items as against the expected `100`
+- provided is a distance validation function that requests for the device location permission and if granted uses the [geodist](https://www.npmjs.com/package/geodist) package to calculate the distance between the users coordinates and the assumed fixed constant
+
+- Basic simulated user authentication
 - Each component is modularized
 - A custom Github workflow triggers eas-updates for the `production channel` and `production branch` on expo.binary production builds are also triggered from the same `main` branch as well
-- wrote little to no tests at all, due to the assessment deadline.
 
 ```
 Component "folder level"
-│   Component.test.tsx
 │   Component.styles.ts
 │   Component.tsx
 │   index.tsx

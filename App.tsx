@@ -13,8 +13,9 @@ const App = (): JSX.Element | null => {
   const [appIsReady, setAppIsReady] = useState(false);
 
   const fontConfig = {
-    'FuzzyBubbles-Regular': require('./src/assets/fonts/FuzzyBubbles_Regular.ttf'),
-    'FuzzyBubbles-Bold': require('./src/assets/fonts/FuzzyBubbles_Bold.ttf'),
+    'Quicksand-regular': require('./src/assets/fonts/Quicksand_regular.ttf'),
+    'Quicksand-bold': require('./src/assets/fonts/Quicksand_bold.ttf'),
+    'Quicksand-medium': require('./src/assets/fonts/Quicksand_medium.ttf'),
   };
 
   const prepareApp = async () => {

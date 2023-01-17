@@ -1,14 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit';
-import api from 'services/api';
-import feedSlice from 'features/feed/feedSlice';
+import userSlice from 'features/user/userSlice';
 
 const store = configureStore({
   reducer: {
-    [api.reducerPath]: api.reducer,
-    [feedSlice.name]: feedSlice.reducer,
+    [userSlice.name]: userSlice.reducer,
   },
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(api.middleware),
 });
 
 export default store;

@@ -42,7 +42,7 @@ export default () => ({
       softwareKeyboardLayoutMode: 'pan',
       package: 'com.etap.comeBuy',
     },
-    description: 'A simple social e-commerce app',
+    description: 'A simple and basic geo-fenced e-commerce app',
     githubUrl: 'https://github.com/AdamuAbba/come_buy.git',
     extra: {
       eas: {

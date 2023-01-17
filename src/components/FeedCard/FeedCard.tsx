@@ -1,80 +1,49 @@
-import {addToLikedFeed, selectLikedFeed} from 'features/feed';
-import React, {memo, useCallback, useRef} from 'react';
-import {Image, View} from 'react-native';
-import {TapGestureHandler} from 'react-native-gesture-handler';
-import {Avatar, Colors, IconButton, Surface, Text} from 'react-native-paper';
-import Animated from 'react-native-reanimated';
-import {useAppDispatch, useAppSelector} from 'utils/hooks';
+import {MaterialCommunityIcons} from '@expo/vector-icons';
+import React, {memo} from 'react';
+import {ImageBackground, View} from 'react-native';
+import {Button, Colors, Text, useTheme} from 'react-native-paper';
+import {getImage, validateLocation} from 'utils/functions';
 import {styles} from './FeedCard.styles';
 import {IFeedCard} from './types';
 
-const FeedCard = ({item, navigation}: IFeedCard) => {
-  const {id, image, price, title} = item;
-  const shortTitle = title.split(' ', 3).join(' ');
-  const likedFeed = useAppSelector(selectLikedFeed);
-  const dispatch = useAppDispatch();
+const FeedCard = ({item}: IFeedCard) => {
+  const {colors} = useTheme();
+  const {price, title, image} = item;
 
-  const handleAddToLikePress = useCallback(() => {
-    dispatch(addToLikedFeed(item));
-  }, []);
-  const handleSingleProductPress = useCallback(() => {
-    navigation.navigate('single-product-screen', {product: item});
-  }, []);
-
-  const doubleTapRef = useRef<TapGestureHandler>(null);
-
-  const randomUser = () => {
-    if (id % 2 === 0) {
-      return require('assets/images/oga_monday.png');
-    } else if (id % 2 !== 0) {
-      return require('assets/images/iya_bisi.png');
-    }
-  };
   return (
-    <Surface style={styles.container}>
-      <View style={styles.titleView}>
-        <View style={styles.avatarView}>
-          <Avatar.Image
-            source={randomUser()}
-            style={styles.avatarImage}
-            size={40}
-          />
-        </View>
-        <View>
-          <Text>{id % 2 === 0 ? 'Oga monday' : 'iya bisi'}</Text>
-          <Text>{shortTitle}...</Text>
-        </View>
-      </View>
-      <TapGestureHandler
-        waitFor={doubleTapRef}
-        numberOfTaps={1}
-        onActivated={handleSingleProductPress}>
-        <TapGestureHandler
-          maxDelayMs={250}
-          ref={doubleTapRef}
-          numberOfTaps={2}
-          onActivated={handleAddToLikePress}>
-          <Animated.View style={styles.imageView}>
-            <Image
-              source={{
-                uri: image,
-              }}
-              style={styles.cardImage}
-              resizeMode="contain"
-            />
-          </Animated.View>
-        </TapGestureHandler>
-      </TapGestureHandler>
-      <View style={styles.likeBtnView}>
-        <IconButton
-          icon="heart"
-          color={likedFeed.includes(item) ? Colors.red500 : Colors.white}
-          size={20}
-          onPress={() => console.log('Pressed')}
+    <View style={styles.container}>
+      <ImageBackground
+        resizeMode="contain"
+        source={getImage(image)}
+        style={styles.imageView}>
+        <MaterialCommunityIcons
+          name="cards-heart-outline"
+          size={24}
+          color={colors.error}
         />
-        <Text>₦{price}</Text>
+      </ImageBackground>
+      <View style={styles.titleView}>
+        <Text
+          numberOfLines={2}
+          ellipsizeMode="tail"
+          theme={{colors: {text: Colors.black}}}>
+          {title}
+        </Text>
+        <View>
+          <Text style={styles.price} theme={{colors: {text: Colors.black}}}>
+            $ {price}
+          </Text>
+        </View>
       </View>
-    </Surface>
+      <Button
+        onPress={validateLocation}
+        labelStyle={styles.buttonText}
+        style={styles.button}
+        mode="contained"
+        color={colors.surface}>
+        PLACE ORDER
+      </Button>
+    </View>
   );
 };
 

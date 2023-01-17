@@ -3,31 +3,37 @@ import {Colors} from 'react-native-paper';
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 10,
-    elevation: 8,
+    margin: 6,
+    elevation: 5,
+    height: 300,
+    width: 163,
+    backgroundColor: 'white',
+    borderRadius: 7,
   },
-  cardImage: {
-    height: 200,
-  },
+
   titleView: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    alignSelf: 'center',
+    width: '88%',
+    marginTop: 10,
   },
   imageView: {
-    backgroundColor: Colors.white,
+    height: 170,
+    justifyContent: 'flex-end',
+    paddingLeft: 8,
   },
-  avatarView: {
-    borderWidth: 2,
-    borderColor: Colors.white,
-    borderRadius: 100,
-    margin: 9,
+  price: {
+    fontFamily: 'Quicksand-bold',
+    fontSize: 17,
   },
-  avatarImage: {
+  button: {
+    width: '88%',
+    alignSelf: 'center',
+    marginTop: 10,
     elevation: 5,
   },
-  likeBtnView: {
-    flexDirection: 'row',
-    alignItems: 'center',
+
+  buttonText: {
+    fontSize: 13,
   },
 });
 
