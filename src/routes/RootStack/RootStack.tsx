@@ -3,10 +3,9 @@ import {
   CardStyleInterpolators,
   createStackNavigator,
 } from '@react-navigation/stack';
-import CustomHeader from 'components/CustomHeader';
 import React from 'react';
-import FeedTabs from 'routes/FeedTabs';
-import SingleProductScreen from 'screens/other/SingleProductScreen';
+import AuthStack from 'routes/AuthStack';
+import DashboardScreen from 'screens/main/DashboardScreen';
 import {IRootStackParamsList} from './types';
 
 const Tabs = createStackNavigator<IRootStackParamsList>();
@@ -17,12 +16,13 @@ const RootStack = () => {
   return (
     <NavigationContainer>
       <Navigator
+        initialRouteName="auth-stack"
         screenOptions={{
-          header: props => <CustomHeader {...props} />,
-          cardStyleInterpolator: CardStyleInterpolators.forBottomSheetAndroid,
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          headerShown: false,
         }}>
-        <Screen name="feed-tabs" component={FeedTabs} />
-        <Screen name="single-product-screen" component={SingleProductScreen} />
+        <Screen name="auth-stack" component={AuthStack} />
+        <Screen name="dashboard-screen" component={DashboardScreen} />
       </Navigator>
     </NavigationContainer>
   );

@@ -10,14 +10,24 @@ const NINETY_PERCENT_WIDTH = 0.9 * SCREEN_WIDTH;
 
 const successConfig: MessageOptions = {
   type: 'success',
-  duration: 2500,
+  duration: 3000,
   animated: true,
   icon: 'success',
   hideOnPress: true,
-  autoHide: true,
+  autoHide: false,
   hideStatusBar: false,
   message: 'Success',
+  floating: true,
+  position: 'center',
   statusBarHeight: StatusBar.currentHeight,
+  titleStyle: {
+    fontFamily: 'Quicksand-bold',
+    fontSize: 20,
+  },
+  textStyle: {
+    fontFamily: 'Quicksand-medium',
+    fontSize: 16,
+  },
 };
 
 const errorConfig: MessageOptions = {

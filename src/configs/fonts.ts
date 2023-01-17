@@ -1,47 +1,16 @@
 const fontConfig = {
-  web: {
-    regular: {
-      fontFamily: 'FuzzyBubbles-Regular',
-    },
-    medium: {
-      fontFamily: 'FuzzyBubbles-Bold',
-      fontWeight: 'bold',
-    },
-    light: {
-      fontFamily: 'FuzzyBubbles-Regular',
-    },
-    thin: {
-      fontFamily: 'FuzzyBubbles-Regular',
-    },
-  },
-  ios: {
-    regular: {
-      fontFamily: 'FuzzyBubbles-Regular',
-    },
-    medium: {
-      fontFamily: 'FuzzyBubbles-Bold',
-      fontWeight: 'bold',
-    },
-    light: {
-      fontFamily: 'FuzzyBubbles-Regular',
-    },
-    thin: {
-      fontFamily: 'FuzzyBubbles-Regular',
-    },
-  },
   android: {
     regular: {
-      fontFamily: 'FuzzyBubbles-Regular',
+      fontFamily: 'Quicksand-medium',
     },
     medium: {
-      fontFamily: 'FuzzyBubbles-Bold',
-      fontWeight: 'bold',
+      fontFamily: 'Quicksand-bold',
     },
     light: {
-      fontFamily: 'FuzzyBubbles-Regular',
+      fontFamily: 'Quicksand-regular',
     },
     thin: {
-      fontFamily: 'FuzzyBubbles-Regular',
+      fontFamily: 'Quicksand-regular',
     },
   },
 };

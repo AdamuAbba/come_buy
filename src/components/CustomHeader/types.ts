@@ -1,6 +1,6 @@
-import {BottomTabHeaderProps} from '@react-navigation/bottom-tabs';
-import {StackHeaderProps} from '@react-navigation/stack';
+import {IRootStackScreenProps} from 'routes/RootStack/types';
 
-export type ICustomHeader =
-  | Pick<StackHeaderProps, 'back' | 'navigation' | 'route'>
-  | Pick<BottomTabHeaderProps, 'navigation' | 'route'>;
+type Props = IRootStackScreenProps<'dashboard-screen'>;
+
+type ICustomHeader = React.FC<Props>;
+export type {ICustomHeader};
